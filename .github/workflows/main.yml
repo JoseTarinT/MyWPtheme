@@ -1,0 +1,59 @@
+# 2pisoftware GitHub Action for wordpress themes
+# Note: Ensure the correct secrets are set up in the repository GitHub settings
+
+name: Compile and deploy
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Build steps
+    steps:
+      # Checkout the repo
+      - uses: actions/checkout@v2
+      
+      # Setup node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v2.1.5
+        with:
+          # Version Spec of the version to use.  Examples: 12.x, 10.15.1, >=10.15.0
+          node-version: 14.x
+    
+      # Get the node_modules cache for faster build times
+      - name: Node.js modules cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      # Run the compiler
+      - name: Compile theme
+        run: ./production.sh
+          
+      - name: Deploy theme to the configured server
+        uses: burnett01/rsync-deployments@4.1
+        with:
+          switches: -avzr --delete
+          path: theme/
+          remote_path: ${{ secrets.DEPLOY_PATH }}
+          remote_host: ${{ secrets.DEPLOY_HOST }}
+          remote_port: ${{ secrets.DEPLOY_PORT }}
+          remote_user: ${{ secrets.DEPLOY_USER }}
+          remote_key: ${{ secrets.DEPLOY_KEY }}
