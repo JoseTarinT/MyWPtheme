@@ -11,7 +11,6 @@
                 <div class="container">
                     <div class="navbar-brand">
                         <?php
-                        //php coment//
                             if (has_custom_logo()) {
                                 the_custom_logo();
                             } else {
