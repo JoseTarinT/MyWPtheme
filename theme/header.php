@@ -22,10 +22,6 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse flex-column align-items-end" id="navbarCollapse">
-                        <form class="form-inline mt-2 mt-md-0" id="theme-search" action="/" method="get">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="s">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
                         <?php
                             wp_nav_menu([
                                 'theme_location' => 'navbar',

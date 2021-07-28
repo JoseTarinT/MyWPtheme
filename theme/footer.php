@@ -12,15 +12,6 @@
 ?>
         </main>
         <footer id="theme-footer">
-            <?php 
-                if (get_theme_mod('has_action')): 
-                    $action = get_theme_mod( 'action', 'Call us on <a href="tel:01 2345 6789">01 2345 6789</a>' ); ?>
-                <div id="action-bar" class="footer-section d-flex navbar navbar-dark">
-                    <div class="container d-flex justify-content-center">
-                        <div class="text-center"><?php echo $action; ?></div>
-                    </div>
-                </div>
-            <?php endif; ?>
             <div id="footer-main" class="footer-section d-flex bg-primary text-light navbar navbar-dark">
                 <div class="container">
                     <div class="row flex-grow-1">
@@ -35,39 +26,26 @@
                                     } ?>
                                 </div>
                             <?php endif; ?>
-                            <div class="address">
-                                <?php echo get_theme_mod( 'address', '' ); ?>
-                            </div>
-                            <?php $phone = get_theme_mod( 'phone', '' ); 
-                                if (is_string($phone) && strlen($phone) > 0): ?>
-                                <div class="phone">
-                                    P: <a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a>
-                                </div>
-                            <?php endif; ?>
-                            <?php $mobile = get_theme_mod( 'mobile', '' ); 
-                                if (is_string($mobile) && strlen($mobile) > 0): ?>
-                                <div class="mobile">
-                                    M: <a href="tel:<?php echo $mobile; ?>"><?php echo $mobile; ?></a>
-                                </div>
-                            <?php endif; ?>
                         </div>
+                        <!--
                         <div class="iconlist col-md d-flex align-items-end justify-content-center" id="social-links">
                             <ul>
-                                <?php 
-                                $iconlist = get_theme_mod( "social-links-list", [] );
-                                foreach( $iconlist as $icon ) : ?>
+                                //<?php 
+                                //$iconlist = get_theme_mod( "social-links-list", [] );
+                                //foreach( $iconlist as $icon ) : ?>
                                     <li>
                                         <a 
-                                            href="<?php echo $icon['icon_url']; ?>" 
-                                            <?php echo $icon['new_window'] ? 'target="_blank"' : '' ?> 
+                                            href="<?php// echo $icon['icon_url']; ?>" 
+                                            <?php// echo $icon['new_window'] ? 'target="_blank"' : '' ?> 
                                         > 
-                                            <span class="icon icon-<?php echo $icon['icon']; ?>"></span>
-                                            <span class="text"><?php echo $icon['icon_text']; ?></span>
+                                            <span class="icon icon-<?php// echo $icon['icon']; ?>"></span>
+                                            <span class="text"><?php// echo $icon['icon_text']; ?></span>
                                         </a>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
+                        --> 
                         <?php
                             wp_nav_menu([
                                 'theme_location' => 'footer',
