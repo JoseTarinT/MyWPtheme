@@ -1,0 +1,17 @@
+//Hide recaptcha
+.grecaptcha-badge {
+    display: none !important;
+}
+
+// Admin nav bar rules override
+body {
+    $adminBarHeight: 32px;
+    $adminBarHeightMobile: 46px;
+    &.admin-bar {
+        padding-top: $adminBarHeight;
+        @media only screen and (max-width: 782px) {
+            padding-top: $adminBarHeightMobile;
+        }
+    }
+}
+

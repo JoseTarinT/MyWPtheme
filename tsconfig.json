@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+       "target": "ES5",
+       "module": "ES2015",
+       "outDir": "theme/js",
+       "moduleResolution": "node"
+    },
+    "include": [
+        "theme/ts/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}

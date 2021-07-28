@@ -1,0 +1,21 @@
+footer#theme-footer {
+    a {
+        color: $light;
+    }
+    #action-bar {
+        background: rgba($secondary, .3);
+    }
+    #footer-main {
+        .nav-link {
+            padding: 0;
+        }
+    }
+    .navbar-brand img {
+        max-height: 80px;
+    }
+    .address {
+        p {
+            margin: 0;
+        }
+    }
+}

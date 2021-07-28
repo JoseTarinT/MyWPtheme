@@ -1,0 +1,14 @@
+
+header#theme-header{
+    $search-bar: false !default;
+    @if $search-bar == false {
+        #theme-search {
+            display: none;
+        }
+    }
+    
+    .navbar-brand img {
+        max-height: 100px;
+    }
+}
+

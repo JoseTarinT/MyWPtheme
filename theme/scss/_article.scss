@@ -1,0 +1,8 @@
+header.article-head {
+    background-color: rgba($primary, 0.9);
+    &.has-image, &.has-text {
+        background-size: cover;
+        background-position: center 65%;
+        min-height: 25vh;
+    }
+}

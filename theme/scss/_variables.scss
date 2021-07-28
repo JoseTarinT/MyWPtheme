@@ -1,0 +1,18 @@
+
+// Bootstrap overrides
+// To see all variables that you can override:
+//   docker exec mytheme-compiler cat node_modules/bootstrap/scss/_variables.scss | less
+// or to search:
+//   docker exec mytheme-compiler cat node_modules/bootstrap/scss/_variables.scss | grep "navbar"
+
+$search-bar: false;
+
+// Theme Pallete
+$primary: rgb(37, 39, 56);
+$secondary: rgb(49, 61, 129);
+$nav-hover: rgb(116, 133, 231);
+
+$body-bg: #fff;
+$body-color: #111;
+
+// $dark: #3B3836;

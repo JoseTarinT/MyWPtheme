@@ -1,0 +1,51 @@
+# This file will get you up and running with wordpress, php and apache in a few minutes. 
+# Also provides automatic less file compiling. Use it to develop the My theme theme.
+# http://localhost:42235
+version: '3'
+
+services:
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: ugh9p3ugh039gu8h3
+      MYSQL_DATABASE: mytheme
+      MYSQL_USER: mytheme
+      MYSQL_PASSWORD: j347j903hj4n3
+    container_name: mytheme-db
+    volumes:
+      - ./db/database.sql.gz:/docker-entrypoint-initdb.d/database.sql.gz   
+  web:
+    build:
+      context: .
+      dockerfile: docker/wp.dockerfile
+    environment: 
+      WORDPRESS_DB_HOST: "db:3306"
+      WORDPRESS_DB_USER: mytheme
+      WORDPRESS_DB_PASSWORD: j347j903hj4n3
+      WORDPRESS_DB_NAME: mytheme
+      WORDPRESS_DEBUG: 'true'
+      WORDPRESS_CONFIG_EXTRA: |
+        define('FS_METHOD', 'direct' );
+        define('WP_SITEURL', 'http://localhost:42235' );
+        define('WP_HOME', 'http://localhost:42235' );
+    depends_on:
+      - db
+    volumes:
+      - ./theme:/var/www/html/wp-content/themes/mytheme
+      - ./uploads:/var/www/html/wp-content/uploads:rw
+    ports:
+      - "42235:80"
+    container_name: mytheme
+  compiler:
+    build:
+      context: .
+      dockerfile: docker/compiler.dockerfile
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./theme:/home/node/app/theme
+      - ./package.json:/home/node/app/package.json
+      - ./package-lock.json:/home/node/app/package-lock.json
+      - ./webpack.mix.js:/home/node/app/webpack.mix.js
+    container_name: mytheme-compiler

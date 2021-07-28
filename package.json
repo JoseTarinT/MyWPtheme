@@ -1,0 +1,36 @@
+{
+  "name": "mytheme-compiler",
+  "version": "1.0.0",
+  "description": "My theme compiler",
+  "author": "2pi Software",
+  "keywords": [
+    "WordPress",
+    "Theme"
+  ],
+  "homepage": "https://2psoftware.com",
+  "dependencies": {
+    "bootstrap": "^5.0.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.6",
+    "dir-archiver": "^1.2.0",
+    "jquery": "^3.6.0",
+    "laravel-mix": "^6.0.25",
+    "popper.js": "^1.16.1",
+    "postcss-loader": "^6.1.0",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.35.1",
+    "sass-loader": "^12.1.0",
+    "ts-loader": "^9.2.3",
+    "typescript": "^4.3.4",
+    "webpack": "^5.41.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "scripts": {
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete",
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "bundle": "dir-archiver --src theme/ --dest ../mytheme.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
+  }
+}

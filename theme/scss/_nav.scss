@@ -1,0 +1,5 @@
+.navbar-dark a {
+    &:hover {
+        color: $nav-hover !important;
+    }
+}
