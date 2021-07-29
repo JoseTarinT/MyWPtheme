@@ -1,34 +1,38 @@
 <?php get_header(); ?>
 
-    <?php 
-        if (have_posts()) : 
-            while (have_posts()) : the_post(); ?>
+    <main id="primary" class="site-main">
 
-                <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+        <section class="container pb-5 pt-5 bg-secondary">
+            <?php 
+                if (have_posts()) : 
+                    while (have_posts()) : the_post(); ?>
 
-                <?php if (is_singular()): ?>
-                    <?php include "article-header-home.php"; ?>
-                    <article class="content">
-                        <div class="container">
-                            <?php the_content(); ?> 
-                        </div>
-                    </article>
-                <?php endif; ?>
-            </div> 
+                        <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-        <?php endwhile; ?>
+                        <?php if (is_singular()): ?>
+                            <?php include "article-header-home.php"; ?>
+                            <article class="content">
+                                <div class="container">
+                                    <?php the_content(); ?> 
+                                </div>
+                            </article>
+                        <?php endif; ?>
+                    </div> 
 
-    <?php else : ?>
+                <?php endwhile; ?>
 
-    <div class="container">
-        <article class="content">
-            <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-                <h1>Not Found</h1>
+            <?php else : ?>
+
+            <div class="container">
+                <article class="content">
+                    <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+                        <h1>Not Found</h1>
+                    </div>
+                </article>
             </div>
-        </article>
-    </div>
 
-    <?php endif; ?>
+            <?php endif; ?>
+        </section>
 
 <?php
 get_footer();
