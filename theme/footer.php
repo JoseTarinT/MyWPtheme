@@ -42,7 +42,7 @@
                                             <span class="text"><?php// echo $icon['icon_text']; ?></span>
                                         </a>
                                     </li>
-                                <?php endforeach; ?>
+                                <?php// endforeach; ?>
                             </ul>
                         </div>
                         --> 
