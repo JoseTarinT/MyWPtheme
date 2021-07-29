@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div id="footer-copyright" class="footer-section d-flex bg-dark text-light navbar navbar-dark">
-                <div class="container d-flex justify-content-center">
+                <div class="container d-flex justify-content-start">
                     <?php
                         $copyright = get_theme_mod( 'copyright-text', '&copy; YYYY '.get_bloginfo('name') );
                     ?>
