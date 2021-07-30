@@ -3,6 +3,13 @@
     <main id="primary" class="site-main">
 
         <section class="container pb-5 pt-5 bg-secondary">
+
+            <?php if(has_post_thumbnail()):?>
+
+                <img src="<?php the_post_thumnail_url();?>" alt="" class="img-fluid"
+
+            <?php endif;?>
+
             <?php 
                 if (have_posts()) : 
                     while (have_posts()) : the_post(); ?>
