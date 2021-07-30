@@ -21,7 +21,7 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse flex-column align-items-end" id="navbarCollapse">
+                    <div class="collapse navbar-collapse flex-column align-items-center" id="navbarCollapse">
                         <?php
                             wp_nav_menu([
                                 'theme_location' => 'navbar',
