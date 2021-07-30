@@ -6,10 +6,19 @@
 
             <?php if(has_post_thumbnail()):?>
 
-                <img src="<?php the_post_thumnail_url();?>" alt="" class="img-fluid"
+                <img src="<?php the_post_thumbnail_url();?>" alt="" class="img-fluid">
 
             <?php endif;?>
 
+            <div class="container-divider-a">
+                <div class="divider-a">
+                    <span class="divider-separator-a"></span>
+                </div>
+            </div>
+            <!--<div class="line">
+                <span class="divider"></span>
+            </div>-->
+            
             <?php 
                 if (have_posts()) : 
                     while (have_posts()) : the_post(); ?>
@@ -39,6 +48,12 @@
             </div>
 
             <?php endif; ?>
+
+            <div class="container-divider-b">
+                <div class="divider-b">
+                    <span class="divider-separator-b"></span>
+                </div>
+            </div>
         </section>
 
 <?php
