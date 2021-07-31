@@ -3,9 +3,14 @@
 FROM wordpress:latest
 
 # Install WP-CLI
-RUN apt-get update &&\
-    apt-get install less &&\
-    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar &&\
+
+RUN echo "Acquire::Check-Valid-Until \"false\";\nAcquire::Check-Date \"false\";" | cat > /etc/apt/apt.conf.d/10no--check-valid-until
+
+RUN apt-get update 
+
+RUN apt-get install less 
+
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar &&\
     mv wp-cli.phar /usr/bin/wp &&\
     chmod ugo+x /usr/bin/wp &&\
     mkdir -p /var/www/.wp-cli &&\
