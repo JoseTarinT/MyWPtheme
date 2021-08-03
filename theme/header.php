@@ -10,14 +10,13 @@
             <nav class="navbar navbar-expand-md navbar-dark bg-primary">
                 <div class="container">
                     <div class="navbar-brand">
-                        <?php
-                            if (function_exists('the_custom_logo')){//(has_custom_logo()) {
+                    <?php
+                            if (has_custom_logo()) {
                                 the_custom_logo();
-                            }//else {
-                            //    echo '<a href="'.home_url().'"><img src="'.get_stylesheet_directory_uri().'/assets/img/logo.svg" alt="'.get_bloginfo( 'name' ).'"></a>';
-                            // }
+                            } else {
+                                echo '<a href="'.home_url().'"><img src="'.get_stylesheet_directory_uri().'/assets/img/Generic logo.svg" alt="'.get_bloginfo( 'name' ).'"></a>';
+                            }
                         ?>
-                        <img class="mb-3 mx-auto logo" src="assets/img/Generic logo.svg" alt="logo" >
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

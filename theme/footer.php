@@ -19,12 +19,11 @@
                             <?php 
                             if (get_theme_mod('has_footerlogo')) : ?>
                                 <div class="navbar-brand"> <?php
-                                    if (function_exists('the_custom_logo')){//(has_custom_logo()) {
+                                    if (has_custom_logo()) {
                                         the_custom_logo();
-                                    } //else {
-                                       // echo '<a href="'.home_url().'"><img src="'.get_stylesheet_directory_uri().'/assets/img/logo.svg" alt="'.get_bloginfo( 'name' ).'"></a>';
-                                     ?>
-                                     <img class="mb-3 mx-auto logo" src="img/logo.svg" alt="logo" >
+                                    } else {
+                                        echo '<a href="'.home_url().'"><img src="'.get_stylesheet_directory_uri().'/assets/img/Generic logo.svg" alt="'.get_bloginfo( 'name' ).'"></a>';
+                                    } ?>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -51,7 +50,7 @@
                             wp_nav_menu([
                                 'theme_location' => 'footer',
                                 'container'      => false,
-                                'menu_class'     => 'nav navbar-nav text-md-end col-md',
+                                'menu_class'     => 'nav navbar-nav text-md-center col-md',
                                 'fallback_cb'    => '__return_false',
                                 'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                                 'depth'          => 2,

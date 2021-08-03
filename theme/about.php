@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/*
+Template name: About
+*/
+
+ get_header(); ?>
 <div class="container pb-5 bg-secondary">
     <header <?php if ( has_post_thumbnail() ) {
         $imagesrc = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
@@ -25,4 +30,4 @@
                     </div>
                 </div>
 </div>
-<?php get_footer();
+<?php get_footer();?>
