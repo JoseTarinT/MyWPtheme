@@ -7,3 +7,16 @@ body {
 main {
     flex: 1;
 }
+
+.wp-block-embed__wrapper {
+    text-align: center;
+    position: relative;
+}
+
+.container-divider-a {
+    width: 80%;
+    border: solid 8px orange;
+    background-color: orange;
+    margin: 0 auto;
+    margin-right: 0;
+}
