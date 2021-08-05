@@ -37,18 +37,6 @@ main {
     flex: 1;
 }
 
-.wp-block-embed__wrapper {
-    text-align: center;
-    position: relative;
-    width: 700px;
-    height: 500px;
-}
-
-.wp-embed-aspect-16-9 {
-    width: 700px;
-    height: 450px;
-}
-
 .container-divider-a {
     width: 80%;
     border: solid 8px #FAA042;
@@ -58,12 +46,26 @@ main {
 }
 
 .wp-block-separator {
-    width: 80%;
+    width: 100%;
     border: solid 8px #FAA042;
     background-color: #FAA042;
     margin: 0 auto;
-    margin-left: -24px;
+    margin-left: -151px;
 }
+
+h5, .h5 {
+    font-size: 1.25rem;
+    margin-top: 30px;
+  }
+  
+
+// hr {
+//   opacity: 0;
+// }
+
+// hr:not([size]) {
+//   height: 1px;
+// }
 
 header.article-head.has-image, header.article-head.has-text {
     background-size: cover;
