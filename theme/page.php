@@ -5,16 +5,13 @@
         echo "style='background-image: url($imagesrc);'";
     }?> class="d-flex align-items-end article-head img-thumbnail<?php echo has_post_thumbnail() ? " has-image" : ""?>">
     </header>
-    <p>
-        Hello world
-    </p>
     <div class="container-divider-a">
                     <div class="divider-a">
                         <span class="divider-separator-a"></span>
                     </div>
                 </div>
     <div class="container">
-        <article class="content">
+        <article class="content" style="width: 80%;margin: auto;">
                 <?php the_post(); ?>
 
                 <h2><?php the_title(); ?></h2>
