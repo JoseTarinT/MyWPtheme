@@ -12,7 +12,7 @@
 ?>
         </main>
         <footer id="theme-footer">
-            <div id="footer-main" class="footer-section d-flex bg-primary text-light navbar navbar-dark">
+            <div id="footer-main" class="footer-section d-flex bg-primary text-light navbar navbar-dark" style="border-top: solid 5px #070D1F;">
                 <div class="container">
                     <div class="row flex-grow-1">
                         <div class="footer-branding col-md">

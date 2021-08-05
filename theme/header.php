@@ -7,26 +7,26 @@
     </head>
     <body <?php body_class(); ?>>
         <header id="theme-header">
-            <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div id="header-main" class="footer-section d-flex bg-primary text-light navbar navbar-dark" style="border-bottom: solid 5px #070D1F";>
                 <div class="container">
-                    <div class="navbar-brand">
-                    <?php
-                            if (has_custom_logo()) {
-                                the_custom_logo();
-                            } else {
-                                echo '<a href="'.home_url().'"><img src="'.get_stylesheet_directory_uri().'/assets/img/Generic logo.svg" alt="'.get_bloginfo( 'name' ).'"></a>';
-                            }
-                        ?>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse flex-column align-items-center" id="navbarCollapse">
+                    <div class="row flex-grow-1">
+                        <div class="footer-branding col-md">
+                            <?php 
+                            if (get_theme_mod('has_footerlogo')) : ?>
+                                <div class="navbar-brand"> <?php
+                                    if (has_custom_logo()) {
+                                        the_custom_logo();
+                                    } else {
+                                        echo '<a href="'.home_url().'"><img src="'.get_stylesheet_directory_uri().'/assets/img/Generic logo.svg" alt="'.get_bloginfo( 'name' ).'"></a>';
+                                    } ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
                         <?php
                             wp_nav_menu([
-                                'theme_location' => 'navbar',
+                                'theme_location' => 'footer',
                                 'container'      => false,
-                                'menu_class'     => 'nav navbar-nav navbar-md-end',
+                                'menu_class'     => 'nav navbar-nav text-md-center col-md',
                                 'fallback_cb'    => '__return_false',
                                 'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                                 'depth'          => 2,
@@ -35,6 +35,6 @@
                         ?>
                     </div>
                 </div>
-            </nav>
+            </div>
         </header>
         <main role="main" id="theme-content">

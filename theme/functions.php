@@ -81,3 +81,11 @@ if (class_exists('WooCommerce')) {
         return $fragments;
     }
 }
+
+// Change embed default size
+add_filter( 'embed_defaults', 'bigger_embed_size' );
+         
+function bigger_embed_size()
+{
+return array( 'width' => 700, 'height' => 450 );
+}

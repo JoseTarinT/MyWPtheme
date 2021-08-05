@@ -2,7 +2,7 @@
 <div class="container pb-5 bg-secondary">
     <header <?php if ( has_post_thumbnail() ) {
         $imagesrc = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
-        echo "style='background-image: url($imagesrc);'";
+        echo "style='background-image: url($imagesrc); background-size: cover; background-position: top; min-height: 69vh; width: 80%; margin-inline: auto;'";
     }?> class="d-flex align-items-end article-head img-thumbnail<?php echo has_post_thumbnail() ? " has-image" : ""?>">
     </header>
     <div class="container-divider-a">
