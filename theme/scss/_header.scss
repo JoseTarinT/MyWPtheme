@@ -7,11 +7,16 @@ header#theme-header{
         }
     }
     
-    #header-main {
-        .nav-link {
-            padding: 0;
-            text-decoration: underline 5px #FAA042;
+    a {
+        color: #070D1F;
+    }
 
+    #header-main {
+        .nav-link.active {
+            /*padding: 0;*/
+            text-decoration: underline 5px #FAA042;
+        }
+    }
     .navbar-brand img {
         max-height: 100px;
     }
