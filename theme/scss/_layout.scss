@@ -46,11 +46,12 @@ main {
 }
 
 .wp-block-separator {
-    width: 100%;
+    width: 80%;
     border: solid 8px #FAA042;
     background-color: #FAA042;
     margin: 0 auto;
-    margin-left: -151px;
+    margin-left: -24px;
+    opacity: 1 !important;
 }
 
 h5, .h5 {
@@ -58,6 +59,15 @@ h5, .h5 {
     margin-top: 30px;
   }
   
+h2 {
+    width: 80%;
+    margin: 27px auto 27px auto;
+}
+
+p {
+    width: 80%;
+    margin: 27px auto 36px auto;
+}  
 
 // hr {
 //   opacity: 0;

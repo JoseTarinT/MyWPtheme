@@ -11,7 +11,7 @@
                     </div>
                 </div>
     <div class="container">
-        <article class="content" style="width: 80%; margin: auto">
+        <article class="content">
                 <?php the_post(); ?>
 
                 <h2><?php the_title(); ?></h2>

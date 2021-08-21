@@ -11,7 +11,7 @@
                     </div>
                 </div>
     <div class="container">
-        <article class="content" style="width: 80%;margin: auto;">
+        <article class="content">
                 <?php the_post(); ?>
 
                 <h2><?php the_title(); ?></h2>
@@ -19,10 +19,5 @@
                 <?php the_content(); ?>   
         </article>
     </div>
-    <div class="container-divider-b">
-                    <div class="divider-b">
-                        <span class="divider-separator-b"></span>
-                    </div>
-                </div>
 </div>
 <?php get_footer();
