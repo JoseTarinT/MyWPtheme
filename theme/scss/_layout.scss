@@ -92,3 +92,11 @@ header.article-head.has-image, header.article-head.has-text {
   .text-align-picture-about {
       text-align: center;
   }
+
+  a.text-light:hover a {
+    color: rgb(255, 255, 255);
+  }
+
+  a.text-light:hover strong {
+    color: rgb(255, 255, 255);
+  }
