@@ -6,6 +6,7 @@ body {
 
 main {
     flex: 1;
+    background-color: $primary;
 }
 
 .wp-block-embed__wrapper {
@@ -26,16 +27,6 @@ main {
 .navbar-dark .navbar-nav .nav-link {
     color: #070D1F;
   }
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
-}
 
 .container-divider-a {
     width: 80%;
@@ -68,14 +59,6 @@ p {
     width: 80%;
     margin: 27px auto 36px auto;
 }  
-
-// hr {
-//   opacity: 0;
-// }
-
-// hr:not([size]) {
-//   height: 1px;
-// }
 
 header.article-head.has-image, header.article-head.has-text {
     background-size: cover;
